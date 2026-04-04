@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta Comercial — Automação Agência de Viagens</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --yellow:#F5C518;--orange:#E8850A;--orange-btn:#F59B1E;
+    --bg:#111110;--bg-card:#1A1A18;--bg-card2:#222220;
+    --border:rgba(255,255,255,0.08);--border-hover:rgba(245,197,24,0.3);
+    --text:#FFFFFF;--text-muted:rgba(255,255,255,0.55);--text-faint:rgba(255,255,255,0.3);
+    --teal:#22C997;--red:#E55353;
+    --c1:#F5C518;--c2:#F59B1E;--c3:#22C997;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+
+  /* NAV */
+  nav{display:flex;justify-content:center;align-items:center;gap:32px;padding:18px 48px;background:#0D0D0C;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;flex-wrap:wrap;}
+  .logo{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;letter-spacing:-0.02em;}
+  .logo-icon{width:34px;height:34px;background:var(--yellow);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+  .logo span{color:var(--yellow);}
+  .btn-cta{background:var(--orange-btn);color:#000;font-weight:700;font-size:13px;padding:9px 20px;border-radius:8px;border:none;cursor:pointer;letter-spacing:0.01em;text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+  .btn-cta:hover{background:#f0a830;}
+
+  /* HERO */
+  .hero{padding:80px 48px 64px;max-width:900px;margin:0 auto;}
+  .hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(245,197,24,0.1);border:1px solid rgba(245,197,24,0.25);color:var(--yellow);font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:24px;}
+  .hero h1{font-size:clamp(28px,4.5vw,46px);font-weight:800;line-height:1.15;letter-spacing:-0.03em;margin-bottom:16px;}
+  .hero h1 span{color:var(--yellow);}
+  .hero p{font-size:16px;color:var(--text-muted);max-width:580px;margin-bottom:40px;line-height:1.7;}
+  .hero-stats{display:flex;gap:0;flex-wrap:wrap;}
+  .stat-item{padding:20px 32px 20px 0;}
+  .stat-val{font-size:22px;font-weight:700;color:var(--yellow);letter-spacing:-0.02em;}
+  .stat-label{font-size:12px;color:var(--text-faint);margin-top:2px;}
+  .stat-divider{width:1px;background:var(--border);margin:0 8px;align-self:stretch;}
+
+  /* SECTION */
+  .section{max-width:900px;margin:0 auto;padding:0 48px 64px;}
+  @media(max-width:640px){.section,.hero{padding-left:20px;padding-right:20px;}}
+  .section-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:8px;}
+  .section-title{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px;}
+  .section-sub{font-size:14px;color:var(--text-muted);margin-bottom:32px;}
+
+  /* ─── FLOW DIAGRAM ─── */
+  .flow-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:40px 32px 36px;margin-bottom:48px;overflow:hidden;}
+  .flow-svg-container{width:100%;overflow-x:auto;}
+
+  @keyframes dashMove{to{stroke-dashoffset:-24;}}
+  @keyframes pulseNode{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.85;transform:scale(1.04);}}
+  @keyframes fadeSlideUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes glowPulse{0%,100%{filter:drop-shadow(0 0 0px transparent);}50%{filter:drop-shadow(0 0 6px currentColor);}}
+
+  .flow-node{animation:fadeSlideUp .5s ease both;}
+  .flow-node:nth-child(1){animation-delay:.1s;}
+  .flow-node:nth-child(2){animation-delay:.2s;}
+  .flow-node:nth-child(3){animation-delay:.3s;}
+  .flow-node:nth-child(4){animation-delay:.4s;}
+  .flow-node:nth-child(5){animation-delay:.5s;}
+  .flow-node:nth-child(6){animation-delay:.6s;}
+  .flow-node:nth-child(7){animation-delay:.7s;}
+  .flow-node:nth-child(8){animation-delay:.8s;}
+  .flow-node:nth-child(9){animation-delay:.9s;}
+  .flow-node:nth-child(10){animation-delay:1s;}
+  .flow-node:nth-child(11){animation-delay:1.1s;}
+
+  .flow-line{stroke-dasharray:6 4;animation:dashMove 1.4s linear infinite;}
+  .flow-line-slow{stroke-dasharray:6 4;animation:dashMove 2s linear infinite;}
+
+  /* VALOR BANNER */
+  .valor-banner{background:linear-gradient(135deg,rgba(245,197,24,0.07) 0%,rgba(232,133,10,0.07) 100%);border:1px solid rgba(245,197,24,0.2);border-radius:14px;padding:28px;margin-bottom:48px;}
+  .valor-banner-title{font-size:17px;font-weight:800;color:var(--yellow);margin-bottom:12px;}
+  .valor-banner-text{font-size:14px;color:var(--text-muted);line-height:1.75;}
+  .valor-banner-text strong{color:var(--text);font-weight:600;}
+  .valor-bullets{margin-top:16px;display:flex;flex-direction:column;gap:10px;}
+  .valor-bullet{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text-muted);}
+  .vb-icon{font-size:15px;flex-shrink:0;margin-top:1px;}
+
+  /* PHASE CARDS */
+  .phase-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:16px;transition:border-color .2s;}
+  .phase-card:hover{border-color:var(--border-hover);}
+  .phase-header{display:flex;align-items:center;gap:14px;padding:20px 28px;border-bottom:1px solid var(--border);}
+  .phase-badge{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;white-space:nowrap;}
+  .phase-title{font-size:18px;font-weight:700;letter-spacing:-0.01em;}
+  .phase-body{padding:24px 28px;}
+  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:20px;}
+  @media(max-width:560px){.feature-grid{grid-template-columns:1fr;}}
+  .feature-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text-muted);padding:5px 0;}
+  .fi-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+
+  /* PRICE BLOCK */
+  .price-block{background:var(--bg-card2);border-radius:12px;padding:20px 20px 16px;margin-top:4px;}
+  .price-compare-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+  .pc-market-label{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-faint);margin-bottom:3px;}
+  .pc-market-val{font-size:18px;font-weight:700;color:rgba(255,255,255,0.3);text-decoration:line-through;text-decoration-color:var(--red);}
+  .pc-ours{text-align:right;}
+  .pc-ours-label{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--yellow);margin-bottom:3px;}
+  .pc-ours-val{font-size:26px;font-weight:800;color:var(--yellow);letter-spacing:-0.02em;}
+  .pc-savings{display:inline-flex;align-items:center;gap:5px;background:rgba(34,201,151,0.1);border:1px solid rgba(34,201,151,0.2);color:var(--teal);font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;}
+  .mensal-row{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);}
+  .mensal-val{font-weight:600;color:var(--text);}
+
+  /* TOTAL */
+  .total-card{background:var(--bg-card);border:1px solid rgba(245,197,24,0.25);border-radius:16px;padding:32px 28px;margin:8px 0 48px;}
+  .total-phases{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;padding-bottom:24px;border-bottom:1px solid var(--border);margin-bottom:24px;}
+  @media(max-width:560px){.total-phases{grid-template-columns:1fr;}}
+  .tp-label{font-size:11px;color:var(--text-faint);margin-bottom:2px;}
+  .tp-val{font-size:17px;font-weight:700;}
+  .tp-market{font-size:10px;color:var(--text-faint);margin-top:2px;text-decoration:line-through;text-decoration-color:var(--red);}
+  .total-main{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .tm-label{font-size:13px;color:var(--text-muted);}
+  .tm-note{font-size:11px;color:var(--text-faint);margin-top:2px;}
+  .tm-val{font-size:32px;font-weight:800;color:var(--yellow);letter-spacing:-0.03em;}
+  .mensal-strip{background:rgba(34,201,151,0.08);border:1px solid rgba(34,201,151,0.2);border-radius:8px;padding:10px 16px;margin-top:20px;font-size:13px;color:var(--teal);}
+
+  /* ROADMAP */
+  .roadmap-phases{display:flex;flex-direction:column;gap:28px;}
+  .rp-label{font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px;display:inline-block;margin-bottom:10px;}
+  .rp-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;}
+  @media(max-width:560px){.rp-steps{grid-template-columns:1fr;}}
+  .rp-step{background:var(--bg-card);padding:16px 18px;border:1px solid var(--border);}
+  .rp-step:first-child{border-radius:10px 0 0 10px;}
+  .rp-step:last-child{border-radius:0 10px 10px 0;}
+  .rp-step:not(:first-child){border-left:none;}
+  @media(max-width:560px){.rp-step{border-radius:0!important;border-left:1px solid var(--border)!important;border-top:none!important;}.rp-step:first-child{border-radius:10px 10px 0 0!important;border-top:1px solid var(--border)!important;}.rp-step:last-child{border-radius:0 0 10px 10px!important;}}
+  .rs-days{font-size:10px;font-weight:600;color:var(--text-faint);margin-bottom:6px;letter-spacing:0.06em;text-transform:uppercase;}
+  .rs-title{font-size:13px;font-weight:600;margin-bottom:4px;}
+  .rs-desc{font-size:11px;color:var(--text-muted);line-height:1.5;}
+
+  /* CONDITIONS */
+  .cond-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;}
+  @media(max-width:560px){.cond-grid{grid-template-columns:1fr;}}
+  .cond-item{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;gap:12px;align-items:flex-start;}
+  .cond-icon{width:32px;height:32px;background:var(--bg-card2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+  .cond-title{font-size:13px;font-weight:600;margin-bottom:3px;}
+  .cond-desc{font-size:12px;color:var(--text-muted);}
+
+  hr{border:none;border-top:1px solid var(--border);margin:0 0 48px;}
+  footer{background:#0D0D0C;border-top:1px solid var(--border);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--text-faint);}
+  footer strong{color:var(--text-muted);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><div class="logo-icon">⚡</div>IMPACTO <span>GESTÃO</span></div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">⚡ Proposta Comercial</div>
+  <h1>Sistema de Automação para<br><span>Agência de Viagens</span></h1>
+  <p>Uma solução completa com Inteligência Artificial em 3 fases — gestão de e-mails, atendimento no WhatsApp e painel CRM — para aumentar o faturamento e liberar tempo para o que realmente importa.</p>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-val">Fases 1 e 2</div>
+      <div class="stat-label">Gestão de Boletos + Atendimento WhatsApp · 90 dias</div>
+    </div>
+    <div style="width:1px;background:var(--border);margin:0 8px;align-self:stretch;min-height:40px;"></div>
+    <div class="stat-item">
+      <div class="stat-val">Fase 3</div>
+      <div class="stat-label">CRM 3 em 1: Vendas, Pessoal e Financeiro · 90 dias</div>
+    </div>
+    <div style="width:1px;background:var(--border);margin:0 8px;align-self:stretch;min-height:40px;"></div>
+    <div class="stat-item">
+      <div class="stat-val">Abril 2026</div>
+      <div class="stat-label">Data da proposta</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+
+  <!-- FLOW DIAGRAM -->
+  <div class="section-label">Visão geral</div>
+  <div class="section-title">Como o sistema funciona</div>
+  <p class="section-sub">Veja como cada parte se conecta e entrega o resultado final — da automação ao painel de gestão completo.</p>
+
+  <div class="flow-wrap">
+    <div class="flow-svg-container">
+    <svg viewBox="0 0 820 540" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Inter,sans-serif">
+      <defs>
+        <!-- Arrow markers -->
+        <marker id="arr-y" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#F5C518" opacity=".7"/>
+        </marker>
+        <marker id="arr-o" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#F59B1E" opacity=".7"/>
+        </marker>
+        <marker id="arr-t" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#22C997" opacity=".7"/>
+        </marker>
+        <marker id="arr-w" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="rgba(255,255,255,0.25)"/>
+        </marker>
+        <!-- Glow filters -->
+        <filter id="glow-y"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-t"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+
+      <!-- ══════════ COLUMN LABELS ══════════ -->
+      <text x="130" y="24" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#F5C518" opacity=".7">FASE 1 · E-MAILS</text>
+      <text x="380" y="24" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#F59B1E" opacity=".7">FASE 2 · WHATSAPP</text>
+      <text x="640" y="24" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#22C997" opacity=".7">FASE 3 · CRM</text>
+
+      <!-- ══════════ FASE 1 NODES ══════════ -->
+      <!-- Node: E-mail chega -->
+      <g class="flow-node">
+        <rect x="50" y="44" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F5C518" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="75" y="64" font-size="11" font-weight="700" fill="#F5C518">📧 E-mail chega</text>
+        <text x="75" y="80" font-size="10" fill="rgba(255,255,255,.45)">Gatilho automático n8n</text>
+      </g>
+
+      <!-- arrow down -->
+      <line x1="131" y1="94" x2="131" y2="116" stroke="#F5C518" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-y)" class="flow-line"/>
+
+      <!-- Node: IA analisa -->
+      <g class="flow-node">
+        <rect x="50" y="116" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F5C518" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="75" y="136" font-size="11" font-weight="700" fill="#F5C518">🤖 IA analisa</text>
+        <text x="75" y="152" font-size="10" fill="rgba(255,255,255,.45)">Detecta boleto / PIX</text>
+      </g>
+
+      <!-- arrow down -->
+      <line x1="131" y1="166" x2="131" y2="188" stroke="#F5C518" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-y)" class="flow-line"/>
+
+      <!-- Node: Extrai dados -->
+      <g class="flow-node">
+        <rect x="50" y="188" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F5C518" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="75" y="208" font-size="11" font-weight="700" fill="#F5C518">📋 Extrai dados</text>
+        <text x="75" y="224" font-size="10" fill="rgba(255,255,255,.45)">Fornecedor · venc. · PIX</text>
+      </g>
+
+      <!-- arrow down -->
+      <line x1="131" y1="238" x2="131" y2="260" stroke="#F5C518" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-y)" class="flow-line"/>
+
+      <!-- Node: Salva Google Sheets -->
+      <g class="flow-node">
+        <rect x="50" y="260" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F5C518" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="75" y="280" font-size="11" font-weight="700" fill="#F5C518">📊 Salva no Sheets</text>
+        <text x="75" y="296" font-size="10" fill="rgba(255,255,255,.45)">Planilha atualizada</text>
+      </g>
+
+      <!-- arrow down -->
+      <line x1="131" y1="310" x2="131" y2="332" stroke="#F5C518" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-y)" class="flow-line"/>
+
+      <!-- Node: Notifica WhatsApp -->
+      <g class="flow-node">
+        <rect x="50" y="332" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F5C518" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="75" y="352" font-size="11" font-weight="700" fill="#F5C518">💬 Avisa WhatsApp</text>
+        <text x="75" y="368" font-size="10" fill="rgba(255,255,255,.45)">PIX pronto p/ copiar</text>
+      </g>
+
+      <!-- ══════════ FASE 2 NODES ══════════ -->
+      <!-- Node: Lead envia msg -->
+      <g class="flow-node">
+        <rect x="299" y="44" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F59B1E" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="324" y="64" font-size="11" font-weight="700" fill="#F59B1E">📲 Lead manda msg</text>
+        <text x="324" y="80" font-size="10" fill="rgba(255,255,255,.45)">WhatsApp Business API</text>
+      </g>
+
+      <line x1="380" y1="94" x2="380" y2="116" stroke="#F59B1E" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line"/>
+
+      <!-- Node: Bot boas-vindas -->
+      <g class="flow-node">
+        <rect x="299" y="116" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F59B1E" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="324" y="136" font-size="11" font-weight="700" fill="#F59B1E">🤝 Bot responde 24h</text>
+        <text x="324" y="152" font-size="10" fill="rgba(255,255,255,.45)">Boas-vindas + menu IA</text>
+      </g>
+
+      <line x1="380" y1="166" x2="380" y2="188" stroke="#F59B1E" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line"/>
+
+      <!-- Node: Qualificação -->
+      <g class="flow-node">
+        <rect x="299" y="188" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F59B1E" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="324" y="208" font-size="11" font-weight="700" fill="#F59B1E">🎯 Qualificação</text>
+        <text x="324" y="224" font-size="10" fill="rgba(255,255,255,.45)">Destino · data · orçamento</text>
+      </g>
+
+      <line x1="380" y1="238" x2="380" y2="260" stroke="#F59B1E" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line"/>
+
+      <!-- Node: Proposta + follow-up -->
+      <g class="flow-node">
+        <rect x="299" y="260" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F59B1E" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="324" y="280" font-size="11" font-weight="700" fill="#F59B1E">✉️ Proposta enviada</text>
+        <text x="324" y="296" font-size="10" fill="rgba(255,255,255,.45)">Follow-up automático</text>
+      </g>
+
+      <line x1="380" y1="310" x2="380" y2="332" stroke="#F59B1E" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line"/>
+
+      <!-- Node: Pós-venda -->
+      <g class="flow-node">
+        <rect x="299" y="332" width="162" height="50" rx="10" fill="#1E1E1B" stroke="#F59B1E" stroke-width="1.2" stroke-opacity=".5"/>
+        <text x="324" y="352" font-size="11" font-weight="700" fill="#F59B1E">🌟 Pós-venda</text>
+        <text x="324" y="368" font-size="10" fill="rgba(255,255,255,.45)">Lembretes · docs · avaliação</text>
+      </g>
+
+      <!-- ══════════ FASE 3 NODES ══════════ -->
+      <!-- Node: Painel de Vendas -->
+      <g class="flow-node">
+        <rect x="558" y="44" width="162" height="50" rx="10" fill="#0E1E19" stroke="#22C997" stroke-width="1.2" stroke-opacity=".6"/>
+        <text x="583" y="64" font-size="11" font-weight="700" fill="#22C997">📈 Gestão de Vendas</text>
+        <text x="583" y="80" font-size="10" fill="rgba(255,255,255,.45)">Funil · metas · conversão</text>
+      </g>
+
+      <!-- Node: Gestão de Pessoal -->
+      <g class="flow-node">
+        <rect x="558" y="116" width="162" height="50" rx="10" fill="#0E1E19" stroke="#22C997" stroke-width="1.2" stroke-opacity=".6"/>
+        <text x="583" y="136" font-size="11" font-weight="700" fill="#22C997">👥 Gestão de Pessoal</text>
+        <text x="583" y="152" font-size="10" fill="rgba(255,255,255,.45)">Equipe · metas por vendedor</text>
+      </g>
+
+      <!-- Node: Gestão Financeira -->
+      <g class="flow-node">
+        <rect x="558" y="188" width="162" height="50" rx="10" fill="#0E1E19" stroke="#22C997" stroke-width="1.2" stroke-opacity=".6"/>
+        <text x="583" y="208" font-size="11" font-weight="700" fill="#22C997">💰 Gestão Financeira</text>
+        <text x="583" y="224" font-size="10" fill="rgba(255,255,255,.45)">Receitas · boletos · despesas</text>
+      </g>
+
+      <!-- ══════════ RESULTADO FINAL ══════════ -->
+      <!-- Result node -->
+      <g class="flow-node" filter="url(#glow-t)">
+        <rect x="524" y="310" width="232" height="72" rx="12" fill="#0A2318" stroke="#22C997" stroke-width="2" stroke-opacity=".9"/>
+        <text x="640" y="338" text-anchor="middle" font-size="12" font-weight="800" fill="#22C997">🚀 Painel Integrado</text>
+        <text x="640" y="356" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.55)">Vendas · Pessoal · Financeiro</text>
+        <text x="640" y="372" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.4)">Tudo numa tela · simples · visual</text>
+      </g>
+
+      <!-- ══════════ CROSS-COLUMN CONNECTORS ══════════ -->
+      <!-- Fase 1 Sheets → Fase 3 Financeiro (horizontal) -->
+      <path d="M212,285 C255,285 255,213 299,213" fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity=".3" stroke-dasharray="5 4" marker-end="url(#arr-y)" class="flow-line-slow"/>
+
+      <!-- Fase 2 leads → Fase 3 Vendas (horizontal) -->
+      <path d="M461,69 C510,69 510,69 558,69" fill="none" stroke="#F59B1E" stroke-width="1" stroke-opacity=".3" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line-slow"/>
+
+      <!-- Fase 2 Qualificação → Fase 3 Pessoal -->
+      <path d="M461,213 C510,213 510,141 558,141" fill="none" stroke="#F59B1E" stroke-width="1" stroke-opacity=".25" stroke-dasharray="5 4" class="flow-line-slow"/>
+
+      <!-- Fase 3 nodes → Result -->
+      <line x1="639" y1="94" x2="639" y2="116" stroke="#22C997" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-t)" class="flow-line"/>
+      <line x1="639" y1="166" x2="639" y2="188" stroke="#22C997" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-t)" class="flow-line"/>
+      <line x1="639" y1="238" x2="639" y2="310" stroke="#22C997" stroke-width="1.5" stroke-opacity=".5" stroke-dasharray="5 4" marker-end="url(#arr-t)" class="flow-line"/>
+
+      <!-- ══════════ LEGEND ══════════ -->
+      <g transform="translate(36,480)">
+        <rect width="8" height="8" rx="2" fill="#F5C518"/>
+        <text x="14" y="8" font-size="10" fill="rgba(255,255,255,.5)">Fase 1 — Gestão de E-mails e Boletos</text>
+        <rect x="230" width="8" height="8" rx="2" fill="#F59B1E"/>
+        <text x="244" y="8" font-size="10" fill="rgba(255,255,255,.5)">Fase 2 — Atendimento WhatsApp</text>
+        <rect x="440" width="8" height="8" rx="2" fill="#22C997"/>
+        <text x="454" y="8" font-size="10" fill="rgba(255,255,255,.5)">Fase 3 — CRM 3 em 1</text>
+      </g>
+
+      <!-- ══════════ CONNECTING DOTS (decorative) ══════════ -->
+      <circle cx="131" cy="44" r="3" fill="#F5C518" opacity=".6"/>
+      <circle cx="131" cy="382" r="3" fill="#F5C518" opacity=".6"/>
+      <circle cx="380" cy="44" r="3" fill="#F59B1E" opacity=".6"/>
+      <circle cx="380" cy="382" r="3" fill="#F59B1E" opacity=".6"/>
+      <circle cx="639" cy="44" r="3" fill="#22C997" opacity=".6"/>
+      <circle cx="640" cy="382" r="3" fill="#22C997" opacity=".9"/>
+
+    </svg>
+    </div>
+  </div>
+
+  <!-- VALOR BANNER -->
+  <div class="valor-banner">
+    <div class="valor-banner-title">💡 Por que investir neste sistema?</div>
+    <div class="valor-banner-text">
+      Esta proposta entrega um sistema construído especificamente para a sua agência, com <strong>Inteligência Artificial integrada</strong> em cada etapa.
+    </div>
+    <div class="valor-bullets">
+      <div class="valor-bullet"><span class="vb-icon">📈</span><span><strong style="color:var(--text)">Mais faturamento</strong> — atendimento 24h no WhatsApp significa responder mais rápido, qualificar melhor e fechar mais vendas, mesmo fora do horário comercial.</span></div>
+      <div class="valor-bullet"><span class="vb-icon">⏱</span><span><strong style="color:var(--text)">Menos trabalho manual</strong> — boletos identificados e organizados automaticamente pela IA, sem precisar abrir e-mail por e-mail toda semana.</span></div>
+      <div class="valor-bullet"><span class="vb-icon">🎯</span><span><strong style="color:var(--text)">Gestão na palma da mão</strong> — um painel simples que mostra vendas, financeiro e equipe em tempo real, sem planilhas ou sistemas complicados.</span></div>
+      <div class="valor-bullet"><span class="vb-icon">🤖</span><span><strong style="color:var(--text)">Inteligência Artificial a favor do seu negócio</strong> — a IA lê, interpreta e age nos seus processos para que você foque no que gera resultado de verdade.</span></div>
+    </div>
+  </div>
+
+  <!-- FASES -->
+  <div class="section-label">Escopo detalhado</div>
+  <div class="section-title">Fases do projeto</div>
+  <p class="section-sub">Cada fase é entregue e utilizada de forma independente. A agência já opera com automação antes de tudo estar concluído.</p>
+
+  <!-- FASE 1 -->
+  <div class="phase-card">
+    <div class="phase-header">
+      <span class="phase-badge" style="background:rgba(245,197,24,0.12);color:var(--yellow);">Fase 1</span>
+      <span class="phase-title">Gestão de E-mails e Boletos</span>
+    </div>
+    <div class="phase-body">
+      <div class="feature-grid">
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Monitoramento automático do Gmail</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Identificação de boletos via IA (Google Document AI)</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Extração de fornecedor, vencimento e linha digitável</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Código PIX pronto para copiar e colar</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Registro automático em Google Sheets</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Notificação via WhatsApp com código PIX</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Painel de contas a pagar sempre atualizado</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--yellow)"></span>Treinamento e documentação de uso</div>
+      </div>
+      <div class="price-block">
+        <div class="price-compare-row">
+          <div class="pc-market"><div class="pc-market-label">Mercado cobra</div><div class="pc-market-val">R$ 3.500</div></div>
+          <div><div class="pc-savings">✓ Solução personalizada com IA</div></div>
+          <div class="pc-ours"><div class="pc-ours-label">Investimento</div><div class="pc-ours-val">R$ 1.800</div></div>
+        </div>
+        <div class="mensal-row"><span>Manutenção e suporte mensal:</span><span class="mensal-val">R$ 300/mês</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div class="phase-card">
+    <div class="phase-header">
+      <span class="phase-badge" style="background:rgba(232,133,10,0.12);color:var(--orange-btn);">Fase 2</span>
+      <span class="phase-title">Automatização do WhatsApp</span>
+    </div>
+    <div class="phase-body">
+      <div class="feature-grid">
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Atendimento automático 24h via IA</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Qualificação inteligente de leads</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Envio de propostas e follow-up automático</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Acompanhamento pré-viagem (docs e lembretes)</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Suporte durante a viagem</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Pesquisa de satisfação pós-viagem</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Integração com CRM (Fase 3)</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--orange-btn)"></span>Transferência para atendente humano</div>
+      </div>
+      <div class="price-block">
+        <div class="price-compare-row">
+          <div class="pc-market"><div class="pc-market-label">Mercado cobra</div><div class="pc-market-val">R$ 6.000</div></div>
+          <div><div class="pc-savings">✓ Solução personalizada com IA</div></div>
+          <div class="pc-ours"><div class="pc-ours-label">Investimento</div><div class="pc-ours-val">R$ 3.500</div></div>
+        </div>
+        <div class="mensal-row"><span>Manutenção e suporte mensal:</span><span class="mensal-val">R$ 400/mês</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div class="phase-card">
+    <div class="phase-header">
+      <span class="phase-badge" style="background:rgba(34,201,151,0.12);color:var(--teal);">Fase 3</span>
+      <span class="phase-title">CRM 3 em 1 · Gestão de Vendas, Pessoal e Financeiro</span>
+    </div>
+    <div class="phase-body">
+      <div class="feature-grid">
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Painel web responsivo (mobile e desktop)</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Funil de vendas visual e intuitivo</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Relatórios de faturamento, metas e conversão</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Gestão financeira completa (integra Fase 1)</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Gestão de equipe com metas por vendedor</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Histórico completo de clientes e viagens</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Interface simples e intuitiva</div>
+        <div class="feature-item"><span class="fi-dot" style="background:var(--teal)"></span>Integração total com Fases 1 e 2</div>
+      </div>
+      <div class="price-block">
+        <div class="price-compare-row">
+          <div class="pc-market"><div class="pc-market-label">Mercado cobra</div><div class="pc-market-val">R$ 20.000</div></div>
+          <div><div class="pc-savings">✓ Solução personalizada com IA</div></div>
+          <div class="pc-ours"><div class="pc-ours-label">Investimento</div><div class="pc-ours-val">R$ 8.000</div></div>
+        </div>
+        <div class="mensal-row"><span>Manutenção e suporte mensal:</span><span class="mensal-val">R$ 600/mês</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOTAL -->
+  <div class="total-card">
+    <div class="total-phases">
+      <div><div class="tp-label">Fase 1 · E-mails</div><div class="tp-val">R$ 1.800</div><div class="tp-market">Mercado: R$ 3.500</div></div>
+      <div><div class="tp-label">Fase 2 · WhatsApp</div><div class="tp-val">R$ 3.500</div><div class="tp-market">Mercado: R$ 6.000</div></div>
+      <div><div class="tp-label">Fase 3 · CRM 3 em 1</div><div class="tp-val">R$ 8.000</div><div class="tp-market">Mercado: R$ 20.000</div></div>
+    </div>
+    <div class="total-main">
+      <div>
+        <div class="tm-label">Investimento total — 3 fases · 180 dias</div>
+        <div class="tm-note">Mercado cobraria: R$ 29.500</div>
+      </div>
+      <div class="tm-val">R$ 13.300</div>
+    </div>
+    <div class="mensal-strip"><strong>Manutenção e suporte mensal (pós-entrega completa):</strong> R$ 1.300/mês — monitoramento, suporte técnico e atualizações.</div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div class="section-label">Cronograma</div>
+  <div class="section-title">Roadmap de implementação</div>
+  <p class="section-sub">180 dias no total. Fases 1 e 2 entregues nos primeiros 90 dias — a agência já opera com automação enquanto o CRM é desenvolvido.</p>
+
+  <div class="roadmap-phases">
+    <div>
+      <div class="rp-label" style="background:rgba(245,197,24,0.1);color:var(--yellow);">Fases 1 e 2 · Dias 1 a 90</div>
+      <div class="rp-steps">
+        <div class="rp-step"><div class="rs-days">Dias 1–30</div><div class="rs-title">Fase 1 · E-mails</div><div class="rs-desc">Mapeamento, setup n8n, fluxos de extração, testes e entrega com treinamento</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 31–60</div><div class="rs-title">Fase 2 · Setup WhatsApp</div><div class="rs-desc">Conexão API, criação do bot com IA e scripts de atendimento e qualificação</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 61–90</div><div class="rs-title">Fase 2 · Vendas e entrega</div><div class="rs-desc">Fluxos de follow-up, pós-venda, simulações com clientes reais e treinamento</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="rp-label" style="background:rgba(34,201,151,0.1);color:var(--teal);">Fase 3 · CRM 3 em 1 — Dias 91 a 180</div>
+      <div class="rp-steps">
+        <div class="rp-step"><div class="rs-days">Dias 91–120</div><div class="rs-title">Design e arquitetura</div><div class="rs-desc">Wireframes, banco de dados e aprovação visual do painel</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 121–165</div><div class="rs-title">Desenvolvimento</div><div class="rs-desc">CRM conectado às Fases 1 e 2 — módulos de vendas, pessoal e financeiro</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 166–180</div><div class="rs-title">Entrega final</div><div class="rs-desc">Treinamento completo, documentação e suporte</div></div>
+      </div>
+    </div>
+  </div>
+
+  <br><hr>
+
+  <!-- CONDITIONS -->
+  <div class="section-label">Condições</div>
+  <div class="section-title">Como vai funcionar</div>
+  <p class="section-sub">Transparência e segurança para os dois lados.</p>
+
+  <div class="cond-grid">
+    <div class="cond-item"><div class="cond-icon">💳</div><div><div class="cond-title">Pagamento por fase</div><div class="cond-desc">50% no início + 50% na entrega de cada fase</div></div></div>
+    <div class="cond-item"><div class="cond-icon">📝</div><div><div class="cond-title">Contrato formal</div><div class="cond-desc">Escopo, prazos e responsabilidades por escrito</div></div></div>
+    <div class="cond-item"><div class="cond-icon">🔄</div><div><div class="cond-title">Revisões inclusas</div><div class="cond-desc">Até 2 rodadas de ajustes por entrega</div></div></div>
+    <div class="cond-item"><div class="cond-icon">🛠</div><div><div class="cond-title">Suporte pós-entrega</div><div class="cond-desc">30 dias de suporte técnico inclusos em cada fase</div></div></div>
+    <div class="cond-item"><div class="cond-icon">🔧</div><div><div class="cond-title">Ferramentas externas</div><div class="cond-desc">Eventuais custos de API e/ou hospedagem por conta da cliente</div></div></div>
+    <div class="cond-item"><div class="cond-icon">📚</div><div><div class="cond-title">Documentação completa</div><div class="cond-desc">Treinamento e Manual de uso entregue ao final de cada fase</div></div></div>
+  </div>
+
+</div>
+
+<!-- CTA FINAL -->
+<div style="background:#0D0D0C;border-top:1px solid rgba(255,255,255,0.08);padding:48px 48px 40px;text-align:center;">
+  <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;">Pronta para começar?</p>
+  <a href="https://wa.me/5531998889418" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#F59B1E;color:#000;font-weight:800;font-size:16px;padding:16px 40px;border-radius:12px;text-decoration:none;letter-spacing:-0.01em;">
+    📲 Garantir Proposta via WhatsApp
+  </a>
+  <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:14px;">Proposta válida por 15 dias · Resposta em até 24h</p>
+</div>
+
+<footer>
+  <div><strong>Abril de 2026</strong> · Válida por 15 dias</div>
+  <div>Desenvolvido por <strong>Michela Galvão</strong> · Impacto Coletivo HUB</div>
+</footer>
+
+</body>
+</html>
