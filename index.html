@@ -144,13 +144,11 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo"><div class="logo-icon">⚡</div>IMPACTO <span>GESTÃO</span></div>
   <div class="voutur-tag">Proposta para <span>Voutur</span></div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">
     <div class="hero-tag">⚡ Proposta Comercial</div>
@@ -161,7 +159,7 @@
   <div class="hero-stats">
     <div class="stat-item">
       <div class="stat-val">3 meses</div>
-      <div class="stat-label">Entrega completa em 90 dias</div>
+      <div class="stat-label">Implementação em 57 dias · ajustes + relatório final nos 33 dias restantes</div>
     </div>
     <div style="width:1px;background:var(--border);margin:0 8px;align-self:stretch;min-height:40px;"></div>
     <div class="stat-item">
@@ -183,7 +181,6 @@
 
 <div class="section">
 
-  <!-- FLOW -->
   <div class="section-label">Visão geral</div>
   <div class="section-title">Como o sistema funciona</div>
   <p class="section-sub">Cada automação gera dados estruturados que alimentam o painel do Google Sheets — pronto para visualizar resultados e importar direto no CRM da Voutur.</p>
@@ -197,11 +194,10 @@
         <filter id="glow-g"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
 
-      <text x="120" y="22" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#F5C518" opacity=".7">MÊS 1 · E-MAILS</text>
-      <text x="350" y="22" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#F59B1E" opacity=".7">MÊS 2 · WHATSAPP</text>
-      <text x="630" y="22" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#34A853" opacity=".9">MÊS 3 · SHEETS + CRM VOUTUR</text>
+      <text x="120" y="22" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#F5C518" opacity=".7">DIAS 1–7 · E-MAILS</text>
+      <text x="350" y="22" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#F59B1E" opacity=".7">DIAS 8–27 · WHATSAPP</text>
+      <text x="630" y="22" text-anchor="middle" font-size="10" font-weight="700" letter-spacing="1.5" fill="#34A853" opacity=".9">DIAS 28–90 · PAINEL + CRM VOUTUR</text>
 
-      <!-- MÊS 1 -->
       <g class="flow-node"><rect x="40" y="38" width="160" height="48" rx="9" fill="#1E1E1B" stroke="#F5C518" stroke-width="1.2" stroke-opacity=".5"/>
         <text x="65" y="57" font-size="11" font-weight="700" fill="#F5C518">📧 E-mail chega</text>
         <text x="65" y="73" font-size="10" fill="rgba(255,255,255,.4)">Gatilho automático n8n</text></g>
@@ -221,7 +217,6 @@
         <text x="65" y="258" font-size="11" font-weight="700" fill="#F5C518">💬 Avisa no WhatsApp</text>
         <text x="65" y="274" font-size="10" fill="rgba(255,255,255,.4)">PIX pronto p/ copiar</text></g>
 
-      <!-- MÊS 2 -->
       <g class="flow-node"><rect x="270" y="38" width="160" height="48" rx="9" fill="#1E1E1B" stroke="#F59B1E" stroke-width="1.2" stroke-opacity=".5"/>
         <text x="295" y="57" font-size="11" font-weight="700" fill="#F59B1E">📲 Lead manda msg</text>
         <text x="295" y="73" font-size="10" fill="rgba(255,255,255,.4)">WhatsApp Business API</text></g>
@@ -241,12 +236,10 @@
         <text x="295" y="258" font-size="11" font-weight="700" fill="#F59B1E">🌟 Pós-venda</text>
         <text x="295" y="274" font-size="10" fill="rgba(255,255,255,.4)">Lembretes · avaliação</text></g>
 
-      <!-- Setas cruzadas -->
       <path d="M200,263 C235,263 235,200 480,200" fill="none" stroke="#F5C518" stroke-width="1" stroke-opacity=".35" stroke-dasharray="5 4" marker-end="url(#arr-y)" class="flow-line-slow"/>
       <path d="M430,130 C460,130 460,130 480,130" fill="none" stroke="#F59B1E" stroke-width="1" stroke-opacity=".35" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line-slow"/>
       <path d="M430,263 C460,263 460,263 480,263" fill="none" stroke="#F59B1E" stroke-width="1" stroke-opacity=".35" stroke-dasharray="5 4" marker-end="url(#arr-o)" class="flow-line-slow"/>
 
-      <!-- MÊS 3 SHEETS -->
       <g class="flow-node"><rect x="480" y="38" width="185" height="48" rx="9" fill="#0B1F12" stroke="#34A853" stroke-width="1.2" stroke-opacity=".6"/>
         <text x="505" y="57" font-size="11" font-weight="700" fill="#34A853">📊 Aba: Contas a Pagar</text>
         <text x="505" y="73" font-size="10" fill="rgba(255,255,255,.4)">Boletos · PIX · vencimentos</text></g>
@@ -262,7 +255,6 @@
         <text x="505" y="207" font-size="10" fill="rgba(255,255,255,.4)">Propostas · conversão · receita</text></g>
       <line x1="572" y1="220" x2="572" y2="239" stroke="#34A853" stroke-width="1.5" stroke-opacity=".4" stroke-dasharray="5 4" marker-end="url(#arr-g)" class="flow-line"/>
 
-      <!-- RESULTADO FINAL com Voutur -->
       <g class="flow-node" filter="url(#glow-g)">
         <rect x="480" y="239" width="185" height="68" rx="11" fill="#071A0E" stroke="#34A853" stroke-width="2" stroke-opacity=".9"/>
         <text x="572" y="261" text-anchor="middle" font-size="12" font-weight="800" fill="#34A853">📤 CRM Voutur</text>
@@ -270,11 +262,10 @@
         <text x="572" y="295" text-anchor="middle" font-size="10" fill="rgba(255,255,255,.35)">importação direta · dados prontos</text>
       </g>
 
-      <!-- Legend -->
       <g transform="translate(36,390)">
-        <rect width="8" height="8" rx="2" fill="#F5C518"/><text x="14" y="8" font-size="10" fill="rgba(255,255,255,.45)">Mês 1 — E-mails e Boletos</text>
-        <rect x="200" width="8" height="8" rx="2" fill="#F59B1E"/><text x="214" y="8" font-size="10" fill="rgba(255,255,255,.45)">Mês 2 — WhatsApp</text>
-        <rect x="370" width="8" height="8" rx="2" fill="#34A853"/><text x="384" y="8" font-size="10" fill="rgba(255,255,255,.45)">Mês 3 — Painel Sheets + CRM Voutur</text>
+        <rect width="8" height="8" rx="2" fill="#F5C518"/><text x="14" y="8" font-size="10" fill="rgba(255,255,255,.45)">Dias 1–7 — E-mails e Boletos</text>
+        <rect x="200" width="8" height="8" rx="2" fill="#F59B1E"/><text x="214" y="8" font-size="10" fill="rgba(255,255,255,.45)">Dias 8–27 — WhatsApp</text>
+        <rect x="370" width="8" height="8" rx="2" fill="#34A853"/><text x="384" y="8" font-size="10" fill="rgba(255,255,255,.45)">Dias 28–90 — Painel Sheets + CRM Voutur</text>
       </g>
 
       <circle cx="120" cy="38" r="3" fill="#F5C518" opacity=".6"/>
@@ -283,15 +274,14 @@
     </svg>
   </div>
 
-  <!-- PLANO DE PAGAMENTO -->
   <div class="section-label">Investimento</div>
   <div class="section-title">Plano de pagamento mensal</div>
-  <p class="section-sub">Três parcelas fixas de R$ 2.000 — uma entrega concreta a cada mês, sem surpresas no bolso.</p>
+  <p class="section-sub">Três parcelas fixas de R$ 2.000 — implementação em 57 dias, seguida de 30 dias de ajustes e relatório final no dia 90.</p>
 
   <div class="payment-section">
     <div class="payment-grid">
       <div class="payment-month">
-        <div class="payment-month-num">Mês 1 · Dias 1–30</div>
+        <div class="payment-month-num">Mês 1 · Dias 1–7</div>
         <div class="payment-month-title">Gestão de E-mails e Boletos</div>
         <div class="payment-month-desc">Automação de leitura de e-mails, extração de boletos e PIX pela IA, notificação via WhatsApp e painel financeiro no Sheets.</div>
         <div class="payment-month-val">R$ 2.000</div>
@@ -299,7 +289,7 @@
         <div class="payment-month-bar" style="background:var(--yellow);width:33%;"></div>
       </div>
       <div class="payment-month">
-        <div class="payment-month-num">Mês 2 · Dias 31–60</div>
+        <div class="payment-month-num">Mês 2 · Dias 8–27</div>
         <div class="payment-month-title">Automação WhatsApp</div>
         <div class="payment-month-desc">Bot com IA 24h, qualificação de leads, propostas automáticas, follow-up, pós-venda e dados de vendas registrados no Sheets.</div>
         <div class="payment-month-val">R$ 2.000</div>
@@ -307,9 +297,9 @@
         <div class="payment-month-bar" style="background:var(--orange-btn);width:66%;"></div>
       </div>
       <div class="payment-month" style="border-color:rgba(52,168,83,0.35);">
-        <div class="payment-month-num">Mês 3 · Dias 61–90</div>
-        <div class="payment-month-title">Painel + Integração CRM Voutur</div>
-        <div class="payment-month-desc">Dashboard de visualização dos resultados das Fases 1 e 2 e importação estruturada dos dados para o CRM atual da Voutur.</div>
+        <div class="payment-month-num">Mês 3 · Dias 28–90</div>
+        <div class="payment-month-title">Painel CRM + Ajustes + Relatório Final</div>
+        <div class="payment-month-desc">Painel de visualização entregue até o dia 57. Dias 58–87 dedicados a ajustes e correções. Relatório final de resultados entregue no dia 90.</div>
         <div class="payment-month-val" style="color:var(--sheets);">R$ 2.000</div>
         <div class="payment-month-sub">3ª e última parcela</div>
         <div class="payment-month-bar" style="background:var(--sheets);width:100%;"></div>
@@ -326,7 +316,6 @@
     <div class="mensal-strip" style="margin-top:12px;"><strong>Manutenção e suporte após a entrega:</strong> R$ 700/mês — monitoramento, suporte técnico, atualizações e manutenção do painel e integrações.</div>
   </div>
 
-  <!-- VALOR BANNER -->
   <div class="valor-banner">
     <div class="valor-banner-title">💡 Por que investir neste sistema?</div>
     <div class="valor-banner-text">
@@ -340,15 +329,13 @@
     </div>
   </div>
 
-  <!-- FASES DETALHADAS -->
   <div class="section-label">Escopo detalhado</div>
   <div class="section-title">O que está incluso em cada mês</div>
-  <p class="section-sub">Cada mês tem uma entrega concreta e já utilizável — a Voutur começa a ganhar resultado desde o primeiro mês.</p>
+  <p class="section-sub">Cada etapa tem uma entrega concreta e já utilizável. A Voutur começa a ganhar resultado desde o 7º dia.</p>
 
-  <!-- MÊS 1 -->
   <div class="phase-card">
     <div class="phase-header">
-      <span class="phase-badge" style="background:rgba(245,197,24,0.12);color:var(--yellow);">Mês 1</span>
+      <span class="phase-badge" style="background:rgba(245,197,24,0.12);color:var(--yellow);">Dias 1–7</span>
       <span class="phase-title">Gestão de E-mails e Boletos</span>
     </div>
     <div class="phase-body">
@@ -368,15 +355,14 @@
           <div><div class="pc-savings">✓ Solução personalizada com IA</div></div>
           <div class="pc-ours"><div class="pc-ours-label">1ª parcela</div><div class="pc-ours-val">R$ 2.000</div></div>
         </div>
-        <div class="mensal-row"><span>Entrega prevista:</span><span class="mensal-val">até o dia 30</span></div>
+        <div class="mensal-row"><span>Entrega prevista:</span><span class="mensal-val">até o dia 7</span></div>
       </div>
     </div>
   </div>
 
-  <!-- MÊS 2 -->
   <div class="phase-card">
     <div class="phase-header">
-      <span class="phase-badge" style="background:rgba(232,133,10,0.12);color:var(--orange-btn);">Mês 2</span>
+      <span class="phase-badge" style="background:rgba(232,133,10,0.12);color:var(--orange-btn);">Dias 8–27</span>
       <span class="phase-title">Automatização do WhatsApp</span>
     </div>
     <div class="phase-body">
@@ -396,15 +382,14 @@
           <div><div class="pc-savings">✓ Solução personalizada com IA</div></div>
           <div class="pc-ours"><div class="pc-ours-label">2ª parcela</div><div class="pc-ours-val">R$ 2.000</div></div>
         </div>
-        <div class="mensal-row"><span>Entrega prevista:</span><span class="mensal-val">até o dia 60</span></div>
+        <div class="mensal-row"><span>Entrega prevista:</span><span class="mensal-val">até o dia 27</span></div>
       </div>
     </div>
   </div>
 
-  <!-- MÊS 3 SHEETS + CRM -->
   <div class="phase-card-sheets">
     <div class="phase-header" style="border-bottom:1px solid rgba(52,168,83,0.2);">
-      <span class="phase-badge" style="background:rgba(52,168,83,0.12);color:var(--sheets);">Mês 3</span>
+      <span class="phase-badge" style="background:rgba(52,168,83,0.12);color:var(--sheets);">Dias 28–90</span>
       <span class="phase-title">Painel de Resultados + Integração CRM Voutur</span>
     </div>
     <div class="phase-body">
@@ -437,46 +422,44 @@
           <div><div class="pc-savings">✓ Dados prontos p/ importar no CRM Voutur</div></div>
           <div class="pc-ours"><div class="pc-ours-label" style="color:var(--sheets);">3ª parcela</div><div class="pc-ours-val" style="color:var(--sheets);">R$ 2.000</div></div>
         </div>
-        <div class="mensal-row"><span>Entrega prevista:</span><span class="mensal-val">até o dia 90</span></div>
+        <div class="mensal-row"><span>Painel até o dia 57 · Ajustes até o dia 87 · Relatório final no dia 90</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ROADMAP -->
   <div class="section-label">Cronograma</div>
-  <div class="section-title">90 dias · uma entrega por mês</div>
-  <p class="section-sub">Cada mês fecha com uma entrega funcional. A Voutur já começa a usar a automação enquanto os próximos módulos são desenvolvidos.</p>
+  <div class="section-title">90 dias · do primeiro código ao relatório final</div>
+  <p class="section-sub">Implementação completa em 57 dias. Os 30 dias seguintes são dedicados a ajustes e correções. No dia 90, a Voutur recebe o relatório final com os resultados do projeto.</p>
 
   <div class="roadmap-phases">
     <div>
-      <div class="rp-label" style="background:rgba(245,197,24,0.1);color:var(--yellow);">Mês 1 · Dias 1 a 30</div>
+      <div class="rp-label" style="background:rgba(245,197,24,0.1);color:var(--yellow);">Fase 1 · Dias 1 a 7 · Gestão de E-mails</div>
       <div class="rp-steps">
-        <div class="rp-step"><div class="rs-days">Dias 1–10</div><div class="rs-title">Levantamento</div><div class="rs-desc">Mapeamento dos e-mails, acessos, setup n8n e Google Cloud</div></div>
-        <div class="rp-step"><div class="rs-days">Dias 11–22</div><div class="rs-title">Desenvolvimento</div><div class="rs-desc">Fluxos de extração + aba Contas a Pagar no Sheets</div></div>
-        <div class="rp-step"><div class="rs-days">Dias 23–30</div><div class="rs-title">Testes e entrega</div><div class="rs-desc">Validação com boletos reais da Voutur + treinamento</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 1–2</div><div class="rs-title">Levantamento</div><div class="rs-desc">Mapeamento dos e-mails, acessos, setup n8n e Google Cloud</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 3–5</div><div class="rs-title">Desenvolvimento</div><div class="rs-desc">Fluxos de extração, PIX e aba Contas a Pagar no Sheets</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 6–7</div><div class="rs-title">Testes e entrega</div><div class="rs-desc">Validação com boletos reais da Voutur + treinamento</div></div>
       </div>
     </div>
     <div>
-      <div class="rp-label" style="background:rgba(232,133,10,0.1);color:var(--orange-btn);">Mês 2 · Dias 31 a 60</div>
+      <div class="rp-label" style="background:rgba(232,133,10,0.1);color:var(--orange-btn);">Fase 2 · Dias 8 a 27 · Automação WhatsApp</div>
       <div class="rp-steps">
-        <div class="rp-step"><div class="rs-days">Dias 31–45</div><div class="rs-title">Bot WhatsApp</div><div class="rs-desc">Conexão API, bot com IA + abas de Leads e Vendas no Sheets</div></div>
-        <div class="rp-step"><div class="rs-days">Dias 46–55</div><div class="rs-title">Fluxos de vendas</div><div class="rs-desc">Follow-up, pós-venda e dados alimentando o painel em tempo real</div></div>
-        <div class="rp-step"><div class="rs-days">Dias 56–60</div><div class="rs-title">Testes e entrega</div><div class="rs-desc">Simulações reais com clientes + refinamento do bot</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 8–14</div><div class="rs-title">Bot WhatsApp</div><div class="rs-desc">Conexão API, bot com IA + abas de Leads e Vendas no Sheets</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 15–22</div><div class="rs-title">Fluxos de vendas</div><div class="rs-desc">Follow-up, pós-venda e dados alimentando o painel em tempo real</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 23–27</div><div class="rs-title">Testes e entrega</div><div class="rs-desc">Simulações reais com clientes da Voutur + refinamento do bot</div></div>
       </div>
     </div>
     <div>
-      <div class="rp-label" style="background:rgba(52,168,83,0.1);color:var(--sheets);">Mês 3 · Dias 61 a 90</div>
+      <div class="rp-label" style="background:rgba(52,168,83,0.1);color:var(--sheets);">Fase 3 · Dias 28 a 90 · Painel, Ajustes e Relatório Final</div>
       <div class="rp-steps">
-        <div class="rp-step"><div class="rs-days">Dias 61–72</div><div class="rs-title">Dashboard e métricas</div><div class="rs-desc">Painel visual com gráficos, totais e indicadores de resultado</div></div>
-        <div class="rp-step"><div class="rs-days">Dias 73–84</div><div class="rs-title">Integração CRM Voutur</div><div class="rs-desc">Mapeamento do sistema atual e configuração da exportação compatível</div></div>
-        <div class="rp-step"><div class="rs-days">Dias 85–90</div><div class="rs-title">Entrega e treinamento</div><div class="rs-desc">Teste de importação no CRM da Voutur + manual completo</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 28–57</div><div class="rs-title">Painel CRM Voutur</div><div class="rs-desc">Dashboard, abas de resultado e integração com exportação para o CRM atual da Voutur</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 58–87</div><div class="rs-title">Ajustes e correções</div><div class="rs-desc">Período dedicado a refinamentos, correções de fluxo e melhorias com base no uso real</div></div>
+        <div class="rp-step"><div class="rs-days">Dias 88–90</div><div class="rs-title">Relatório final</div><div class="rs-desc">Entrega do relatório completo de resultados, aprendizados e próximos passos para a Voutur</div></div>
       </div>
     </div>
   </div>
 
   <br><hr>
 
-  <!-- CONDITIONS -->
   <div class="section-label">Condições</div>
   <div class="section-title">Como vai funcionar</div>
   <p class="section-sub">Transparência e segurança para os dois lados.</p>
@@ -492,7 +475,6 @@
 
 </div>
 
-<!-- CTA FINAL -->
 <div style="background:#0D0D0C;border-top:1px solid rgba(255,255,255,0.08);padding:48px 48px 40px;text-align:center;">
   <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:4px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;">Voutur · pronta para começar?</p>
   <p style="font-size:14px;color:rgba(255,255,255,0.3);margin-bottom:24px;">R$ 2.000 no primeiro mês já coloca a automação de boletos funcionando.</p>
